@@ -8,11 +8,11 @@ def geneEvaluation(size, range)
     return a
 end
 
-def makePopulation(size, len, range) 
+def makePopulation(size, range) 
     n = 0
     population = [] 
     while n < size 
-        population[n] = geneEvaluation(len, range)
+        population[n] = geneEvaluation(4, range)
         n += 1
     end
     return population
