@@ -80,3 +80,25 @@ def nandFitness(mutatedGene)
     end
     return perfectGene
 end
+
+def orFitness(mutatedGene)
+    size = mutatedGene.size 
+    n = 0
+    perfectGene = [] 
+    while n < size 
+        if mutatedGene[n][0] < 0.1 && mutatedGene[n][1] > 0.9 && mutatedGene[n][2] > 0.9 && mutatedGene[n][3] > 0.9
+            puts "#{mutatedGene[n]},  (member no. #{n}) is a perfect chromosome, it almost covers OR."
+            perfectGene[n] = mutatedGene[n]
+        end
+        n += 1
+    end
+    size = perfectGene.size 
+    m = 0 
+    while m < size 
+        if perfectGene[m] == nil 
+            perfectGene.delete(perfectGene[m]) 
+        end 
+        m += 1
+    end
+    return perfectGene
+end
